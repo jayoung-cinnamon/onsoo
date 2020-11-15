@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -182,20 +183,4 @@ public class StudyWithController {
 
 	}
 	
-	@RequestMapping("/with/rtcConnection.do")
-	public String rtcConnection(Model model, int class_no) {
-
-		try {
-			socket = IO.socket("https://localhost:9001");
-			socket.connect();
-			
-			JSONObject jobj = new JSONObject();
-			jobj.put("teacherid", "test");
-			socket.emit("init", jobj);
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		}
-
-		return "redirect:https://localhost:9001";
-	}
 }

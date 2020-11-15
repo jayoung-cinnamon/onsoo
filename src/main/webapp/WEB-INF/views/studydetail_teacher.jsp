@@ -124,6 +124,8 @@
 					<button class="btn btn-primary"
 						onclick="location.href='studyupdate.do?class_no=${studyDto.class_no}'">수정</button>
 					<button class="btn btn-primary" onclick="location.href='studydelete.do?class_no=${studyDto.class_no}'">삭제</button>
+					<button class="btn btn-primary" onclick="location.href='liveinsert.do?class_no=${studyDto.class_no}'">수업 생성</button>
+					
 				</div>
 			</div>
 		</div>
