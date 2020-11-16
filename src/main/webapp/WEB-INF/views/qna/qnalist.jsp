@@ -21,7 +21,7 @@
     <section class="section area">
     <div id="products">
 		<form action="" id="setRows">
-			<input type="hidden" name="rowPerPage" value="20">
+			<input type="hidden" name="rowPerPage" value="15">
 		</form>
     	<!-- 타이틀 -->
 		<div class="qna_board_title">
@@ -64,7 +64,7 @@
 											<i id="list_icon" class="fas fa-lock fa-lg"></i>
 										</p>
 									</c:if>
-									<a href="qnaone.do?qnano=${qnadto.qnano}">${qnadto.qnatitle}</a>
+									<a href="<c:url value="/qnaone.do?qnano=${qnadto.qnano}" />">${qnadto.qnatitle}</a>
 									<c:if test="${qnadto.qnaresponse eq 'Y'}">
 										<p>
 											<i id="list_icon" class="fas fa-comments fa-lg"></i>
@@ -88,7 +88,7 @@
 				<tr>
 					<sec:authorize access="hasAnyRole('ADMIN','USER' )">
 					<td colspan="6" class="qbtnbar" style="text-align:right;">
-						<input type="button" value="WRITE" onclick="location.href='qnainsertform.do'"/>
+						<input type="button" value="WRITE" onclick="location.href='<c:url value="/qnainsertform.do" />'"/>
 					</td>
 					</sec:authorize>
 				</tr>

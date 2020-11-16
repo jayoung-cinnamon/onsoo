@@ -106,41 +106,51 @@ function videoShow(video_no) {
 			<!-- Post Content -->	
 			<p class="lead">${studyDto.class_info}</p>
 			
-			<table>
-				<colgroup>
-					<col width="10%">
-					<col width="70%">
-					<col width="20%">
-				</colgroup>
-				<tr>
-					<th>번호</th>
-					<th>타이틀</th>
-					<th>시간</th>
-				</tr>
+			<c:choose>
+				<c:when test="${trigger eq null }">
 				
-				<c:choose>
-					<c:when test="${empty videoList }">
+				</c:when>
+				
+				<c:otherwise>
+					<table>
+						<colgroup>
+							<col width="10%">
+							<col width="70%">
+							<col width="20%">
+						</colgroup>
 						<tr>
-							<th colspan="3">----------------- 준비 중입니다 ------------------- </th>
+							<th>번호</th>
+							<th>타이틀</th>
+							<th>시간</th>
 						</tr>
 						
-					</c:when>
-					
-					<c:otherwise>
-						<c:forEach items="${videoList }" var="dto" varStatus="status">
-							<tr>
-								<td>${status.count}</td>
-								<td><a href="javascript:void(0);" onclick="videoShow(${dto.video_no}); return false;">${dto.video_title}</a></td>
-								<td>${dto.video_runtime}</td>
-							</tr>
-						</c:forEach>
+						<c:choose>
+							<c:when test="${empty videoList }">
+								<tr>
+									<th colspan="3">----------------- 준비 중입니다 ------------------- </th>
+								</tr>
+								
+							</c:when>
+							
+							<c:otherwise>
+								<c:forEach items="${videoList }" var="dto" varStatus="status">
+									<tr>
+										<td>${status.count}</td>
+										<td><a href="javascript:void(0);" onclick="videoShow(${dto.video_no}); return false;">${dto.video_title}</a></td>
+										<td>${dto.video_runtime}</td>
+									</tr>
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+					</table>
 					</c:otherwise>
-				</c:choose>
-			</table>
-			
+			</c:choose>
 			<!-- Comments Form -->
 			<div class="reviewContainer">
-				<div class="container">
+				<c:choose>
+					<c:when test="${payDto eq null}"></c:when>
+					<c:otherwise>
+						<div class="container">
 					<form name="reviewInsertForm">
 						<div class="input-group">
 							<div class="starRev">
@@ -158,6 +168,14 @@ function videoShow(video_no) {
 							<input type="hidden" id="starVal" name="review_star" value="0"/>
 							<input type="hidden" name="member_id" value="${member_id }">
 							<input type="hidden" name="review_classno" value="${studyDto.class_no}" />
+							<c:choose>
+								<c:when test="${reviewDto eq null }">
+									<input type="hidden" name="creview" value="N"/>
+								</c:when>
+								<c:otherwise>
+									<input type="hidden" name="creview" value="${reviewDto.review_content }"/>
+								</c:otherwise>
+							</c:choose>
 							<input type="text" class="form-control" id="review_content" name="review_content" placeholder="내용을 입력하세요.">
 							<span class="input-group-btn">
 								<button class="btn btn-default" type="button" name="reviewInsertBtn">등록</button>
@@ -165,6 +183,8 @@ function videoShow(video_no) {
 						</div>
 					</form>
 				</div>
+					</c:otherwise>
+				</c:choose>
 				
 				<div class="container">
 					<div class="review"></div>
