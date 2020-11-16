@@ -26,7 +26,7 @@
   --font-micro: 14px;
   
   --border-radi: 2px;
-    --box-shadow: 7px 7px 14px #b6b6b6, 
+  --box-shadow: 7px 7px 14px #b6b6b6, 
              -7px -7px 14px #ffffff;
 }
 
@@ -163,18 +163,28 @@ td > input[type="submit"]:hover {
 	align-items:center;
 }
 .replybox{
+  font-size:var(--font-micro);
+  padding:10px;
   height:70px;
   width:70%;
 
 }
 .replyArea{
-	
+
 	margin-bottom: 15px;
 }
 
 .replyContent{
-	
+  margin: 4px 4px;
+  padding: 5px 10px 0 10px;
+  background: var(--color-white);
+  color: var(--color-dark-grey);
+  border: none;
+  border-radius: var(--border-radi-btn);
+  box-shadow: var(--box-shadow);
+  font-size:var(--font-micro);
 }
+
 .container{
   margin:0px;
   width:70%;
@@ -182,7 +192,6 @@ td > input[type="submit"]:hover {
 .form-control{
 	
   width:80%;
-
   height: 36px;
   margin: auto;
   padding-left: 16px;
@@ -191,18 +200,15 @@ td > input[type="submit"]:hover {
   box-sizing: border-box;
 }
 
-.container > label{
-	
-}
 .btn-default{
-	 margin: 4px 4px;
+  margin: 4px 4px;
   padding: 5px 10px 0 10px;
   background: var(--color-white);
   color: var(--color-dark-grey);
   height: 30px;
   border: none;
   border-radius: var(--border-radi-btn);
-  box-shadow: var(--btn-shadow);
+  box-shadow: var(--box-shadow);
 }
 .btn-default:hover{
   background-color: var(--color-light-blue);

@@ -27,7 +27,7 @@
 		<div id="inputmenu">
 			<input type="text" id="roomid" placeholder="수업 코드를 입력해주세요" required="required"/>
 			<c:if test="${admindto.member_role eq 'T'}">
-				<button id="btn-open">생성하기</button>
+				<button id="btn-open" href="canvas-designer.html">생성하기</button>
 			</c:if>
 			<button id="btn-join">입장</button>
 		</div>

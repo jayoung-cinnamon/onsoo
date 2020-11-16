@@ -40,19 +40,9 @@ header {
 
 section {
 	width: 100%;
-	height: 100vh;
 	padding-top: 100px;
-	display: flex;
-	flex-direction:column;
-	justify-content: space-between;
-
 }
-.streaming{
-	display:flex;
-	flex-direction:column;
-	height:10px;
 
-}
 .streaming_title {
 	margin: 0px auto 20px auto;
 	padding: 10px 0 0 60px;
