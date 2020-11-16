@@ -11,7 +11,6 @@
 	href="${pageContext.request.contextPath}/resources/css/free.css?after"
 	rel="stylesheet">
 <script>
-
 function delChk(free_no) {
 	if (confirm("삭제하시겠습니까?")) {
 		location.href="freedelete.do?free_no=${freeboardDto.free_no}";
