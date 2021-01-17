@@ -13,7 +13,7 @@
 
   구현 언어: JAVA, HTML, CSS, JavaScript,python, SQL
   
-  사용 기술:  MYBATIS, AJAX, JSTL, JQuery, JSON, Open Api
+  사용 기술: Spring Frame Work ,Spring Security, MYBATIS, AJAX, JSTL, JQuery, JSON, Open Api
   
   사용 툴 : Eclipse, Visual Studio Code, Figma
   
